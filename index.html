@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#B3242A" />
+  <title>姻缘测算 · 八字合婚</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <!-- 输入页 -->
+    <section id="inputView" class="view active">
+      <header class="masthead">
+        <span class="seal" aria-hidden="true">缘</span>
+        <h1 class="title">姻缘测算</h1>
+        <p class="subtitle">输入两人生辰八字，生成合婚命盘。<br>免费看缘分总览，专业版解锁逐年详批。</p>
+      </header>
+
+      <div class="card">
+        <div class="seg" id="inputSeg">
+          <button class="seg-btn active" data-v="pro">专业版 · 详细解盘</button>
+          <button class="seg-btn" data-v="simple">通俗版 · 一目了然</button>
+        </div>
+
+        <div class="person">
+          <p class="person-tag">你</p>
+          <div class="field">
+            <label for="nameA">你的名字</label>
+            <input id="nameA" type="text" maxlength="12" placeholder="例如：小明" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="birthdayA">你的生日（公历）</label>
+            <input id="birthdayA" type="date" />
+          </div>
+          <div class="field">
+            <label for="hourA">出生时辰 <span class="opt">(选填)</span></label>
+            <select id="hourA"></select>
+          </div>
+        </div>
+
+        <div class="person">
+          <p class="person-tag">TA</p>
+          <div class="field">
+            <label for="nameB">TA 的名字</label>
+            <input id="nameB" type="text" maxlength="12" placeholder="例如：小红" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="birthdayB">TA 的生日（公历）</label>
+            <input id="birthdayB" type="date" />
+          </div>
+          <div class="field">
+            <label for="hourB">出生时辰 <span class="opt">(选填)</span></label>
+            <select id="hourB"></select>
+          </div>
+        </div>
+
+        <button id="startBtn" class="cta">开始测算</button>
+        <p class="tip">由名字、生日、时辰生成，仅供娱乐 · 请勿迷信</p>
+      </div>
+    </section>
+
+    <!-- 结果页 -->
+    <section id="resultView" class="view">
+      <div class="seg sticky-seg" id="resultSeg">
+        <button class="seg-btn active" data-v="pro">专业版</button>
+        <button class="seg-btn" data-v="simple">通俗版</button>
+      </div>
+
+      <!-- 通俗版 -->
+      <div id="simpleView" class="result-block">
+        <div class="card result-card">
+          <div class="score-seal" id="scoreRing">
+            <span id="scoreNum" class="score-num">88</span>
+            <span class="score-unit">分</span>
+          </div>
+          <h2 id="resultTitle" class="result-title">天作之合</h2>
+          <p id="resultDesc" class="result-desc"></p>
+          <div class="dims" id="dims"></div>
+          <div class="tags" id="tags"></div>
+          <div class="actions">
+            <button id="againBtn" class="ghost">重新测算</button>
+            <button id="shareBtn" class="cta small">分享结果</button>
+          </div>
+          <p class="tip">仅供娱乐 · 缘分在自己手里</p>
+        </div>
+      </div>
+
+      <!-- 专业版 -->
+      <div id="proView" class="result-block active">
+        <div class="card pro-head">
+          <div class="pro-score-row">
+            <div class="pro-score"><span id="proScoreNum">88</span><span class="unit">分</span></div>
+            <div class="pro-score-meta">
+              <h2 id="proTitle" class="pro-title">天作之合</h2>
+              <p id="proSummary" class="pro-summary"></p>
+            </div>
+          </div>
+          <div class="tags" id="proTags"></div>
+        </div>
+
+        <div class="card section" id="baziSection"></div>
+        <div class="card section" id="wuxingSection"></div>
+        <div class="card section" id="zodiacSection"></div>
+        <div class="card section" id="hehunSection"></div>
+        <div class="card section" id="yunshiSection"></div>
+        <div class="card section" id="detailSection"></div>
+        <div class="card section" id="adviceSection"></div>
+
+        <div class="actions pro-actions">
+          <button id="againBtn2" class="ghost">重新测算</button>
+          <button id="shareBtn2" class="cta small">分享结果</button>
+        </div>
+        <p class="tip">本结果为传统文化娱乐测算，仅供娱乐，请理性看待</p>
+      </div>
+    </section>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
