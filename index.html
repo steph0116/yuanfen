@@ -15,13 +15,13 @@
       <header class="masthead">
         <span class="seal" aria-hidden="true">缘</span>
         <h1 class="title">姻缘测算</h1>
-        <p class="subtitle">输入两人生辰八字，生成合婚命盘。<br>免费看缘分总览，专业版解锁逐年详批。</p>
+        <p class="subtitle">输入两人生辰八字，生成合婚命盘。<br>通俗版免费看，专业版解锁逐年详批。</p>
       </header>
 
       <div class="card">
         <div class="seg" id="inputSeg">
-          <button class="seg-btn active" data-v="pro">专业版 · 详细解盘</button>
-          <button class="seg-btn" data-v="simple">通俗版 · 一目了然</button>
+          <button class="seg-btn active" data-v="simple">通俗版 · 一目了然</button>
+          <button class="seg-btn" data-v="pro">专业版 · 详细解盘</button>
         </div>
 
         <div class="person">
@@ -64,12 +64,12 @@
     <!-- 结果页 -->
     <section id="resultView" class="view">
       <div class="seg sticky-seg" id="resultSeg">
-        <button class="seg-btn active" data-v="pro">专业版</button>
-        <button class="seg-btn" data-v="simple">通俗版</button>
+        <button class="seg-btn active" data-v="simple">通俗版</button>
+        <button class="seg-btn" data-v="pro">专业版</button>
       </div>
 
-      <!-- 通俗版 -->
-      <div id="simpleView" class="result-block">
+      <!-- 通俗版（免费） -->
+      <div id="simpleView" class="result-block active">
         <div class="card result-card">
           <div class="score-seal" id="scoreRing">
             <span id="scoreNum" class="score-num">88</span>
@@ -87,32 +87,44 @@
         </div>
       </div>
 
-      <!-- 专业版 -->
-      <div id="proView" class="result-block active">
-        <div class="card pro-head">
-          <div class="pro-score-row">
-            <div class="pro-score"><span id="proScoreNum">88</span><span class="unit">分</span></div>
-            <div class="pro-score-meta">
-              <h2 id="proTitle" class="pro-title">天作之合</h2>
-              <p id="proSummary" class="pro-summary"></p>
-            </div>
+      <!-- 专业版（付费解锁） -->
+      <div id="proView" class="result-block">
+        <div id="proLocked" class="card lock-card">
+          <h2 class="lock-title">专业版 · 详细解盘</h2>
+          <p class="lock-desc">八字命盘 · 五行格局 · 生肖合婚 · 逐年运势 · 分项解读 · 开运建议</p>
+          <div class="lock-row">
+            <input id="unlockInput" type="text" inputmode="numeric" maxlength="12" placeholder="输入解锁口令" autocomplete="off" />
+            <button id="unlockBtn" class="cta small">解锁</button>
           </div>
-          <div class="tags" id="proTags"></div>
+          <p class="lock-tip">口令在小红书店铺下单后获取</p>
         </div>
 
-        <div class="card section" id="baziSection"></div>
-        <div class="card section" id="wuxingSection"></div>
-        <div class="card section" id="zodiacSection"></div>
-        <div class="card section" id="hehunSection"></div>
-        <div class="card section" id="yunshiSection"></div>
-        <div class="card section" id="detailSection"></div>
-        <div class="card section" id="adviceSection"></div>
+        <div id="proContent">
+          <div class="card pro-head">
+            <div class="pro-score-row">
+              <div class="pro-score"><span id="proScoreNum">88</span><span class="unit">分</span></div>
+              <div class="pro-score-meta">
+                <h2 id="proTitle" class="pro-title">天作之合</h2>
+                <p id="proSummary" class="pro-summary"></p>
+              </div>
+            </div>
+            <div class="tags" id="proTags"></div>
+          </div>
 
-        <div class="actions pro-actions">
-          <button id="againBtn2" class="ghost">重新测算</button>
-          <button id="shareBtn2" class="cta small">分享结果</button>
+          <div class="card section" id="baziSection"></div>
+          <div class="card section" id="wuxingSection"></div>
+          <div class="card section" id="zodiacSection"></div>
+          <div class="card section" id="hehunSection"></div>
+          <div class="card section" id="yunshiSection"></div>
+          <div class="card section" id="detailSection"></div>
+          <div class="card section" id="adviceSection"></div>
+
+          <div class="actions pro-actions">
+            <button id="againBtn2" class="ghost">重新测算</button>
+            <button id="shareBtn2" class="cta small">分享结果</button>
+          </div>
+          <p class="tip">本结果为传统文化娱乐测算，仅供娱乐，请理性看待</p>
         </div>
-        <p class="tip">本结果为传统文化娱乐测算，仅供娱乐，请理性看待</p>
       </div>
     </section>
 

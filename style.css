@@ -256,6 +256,20 @@ button, input, select, textarea { font-family: inherit; }
 .actions { display: flex; gap: 12px; }
 .pro-actions { margin-top: 8px; }
 
+/* 付费墙 */
+.lock-card { text-align: center; padding: 32px 22px; }
+.lock-title { margin: 0 0 10px; font-family: var(--serif); font-size: 22px; font-weight: 800; color: var(--cinnabar-deep); }
+.lock-desc { margin: 0 0 20px; font-size: 14px; line-height: 1.7; color: var(--ink-2); }
+.lock-row { display: flex; gap: 10px; margin-bottom: 14px; }
+.lock-row input {
+  flex: 1; min-width: 0; padding: 12px 14px; font-size: 16px; color: var(--ink);
+  background: #fff; border: 1px solid var(--line); border-radius: 10px; outline: none;
+  -webkit-appearance: none; appearance: none; font-family: var(--sans);
+}
+.lock-row input:focus { border-color: var(--cinnabar); }
+.lock-row .cta { width: auto; flex: 0 0 auto; padding: 12px 20px; }
+.lock-tip { margin: 0; font-size: 13px; color: var(--ink-3); }
+
 /* 专业版 */
 .pro-head { margin-bottom: 16px; }
 .pro-score-row { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }

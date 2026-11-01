@@ -377,8 +377,13 @@
   // ===== 渲染 =====
   var $ = function (id) { return document.getElementById(id); };
   var inputView = $('inputView'), resultView = $('resultView');
-  var version = 'pro';
+  var version = 'simple';
   var lastShare = '';
+
+  // 解锁口令：改这里的数字即可。注意纯前端静态站，口令在源码里可见，防君子不防小人。
+  var UNLOCK_CODE = '5201314';
+  var unlocked = false;
+  try { unlocked = localStorage.getItem('yuanfen_unlocked') === '1'; } catch (e) {}
 
   var SECTIONS = {
     baziSection: { title: '八字命盘', icon: '' },
@@ -554,6 +559,10 @@
     document.querySelectorAll('#resultSeg .seg-btn').forEach(function (b) { b.classList.toggle('active', b.dataset.v === v); });
     $('simpleView').classList.toggle('active', v === 'simple');
     $('proView').classList.toggle('active', v === 'pro');
+    // 专业版付费墙
+    var locked = (v === 'pro' && !unlocked);
+    $('proLocked').style.display = locked ? '' : 'none';
+    $('proContent').style.display = (v === 'pro' && unlocked) ? '' : 'none';
   }
 
   function start() {
@@ -612,6 +621,18 @@
   $('shareBtn2').addEventListener('click', share);
   document.querySelectorAll('#inputSeg .seg-btn').forEach(function (b) { b.addEventListener('click', function () { setVersion(b.dataset.v); }); });
   document.querySelectorAll('#resultSeg .seg-btn').forEach(function (b) { b.addEventListener('click', function () { setVersion(b.dataset.v); }); });
+
+  $('unlockBtn').addEventListener('click', function () {
+    if (($('unlockInput').value || '').trim() === UNLOCK_CODE) {
+      unlocked = true;
+      try { localStorage.setItem('yuanfen_unlocked', '1'); } catch (e) {}
+      $('unlockInput').value = '';
+      setVersion('pro');
+    } else {
+      alert('口令不正确，请核对后重试');
+    }
+  });
+  $('unlockInput').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('unlockBtn').click(); });
 
   initHours();
 })();
