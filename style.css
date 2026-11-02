@@ -256,6 +256,21 @@ button, input, select, textarea { font-family: inherit; }
 .actions { display: flex; gap: 12px; }
 .pro-actions { margin-top: 8px; }
 
+/* 专业版缺口预览 */
+.pro-teaser {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px dashed var(--cinnabar);
+  border-radius: 12px;
+  background: #fff8f6;
+  text-align: left;
+}
+.pro-teaser-lead { margin: 0 0 10px; font-size: 13px; font-weight: 700; color: var(--cinnabar-deep); }
+.pro-teaser-list { margin: 0 0 14px; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; }
+.pro-teaser-list li { font-size: 14px; color: var(--ink-2); }
+.pro-teaser-list .lock { margin-right: 4px; font-size: 12px; }
+.pro-teaser .cta { width: 100%; }
+
 /* 付费墙 */
 .lock-card { text-align: center; padding: 32px 22px; }
 .lock-title { margin: 0 0 10px; font-family: var(--serif); font-size: 22px; font-weight: 800; color: var(--cinnabar-deep); }
@@ -269,6 +284,26 @@ button, input, select, textarea { font-family: inherit; }
 .lock-row input:focus { border-color: var(--cinnabar); }
 .lock-row .cta { width: auto; flex: 0 0 auto; padding: 12px 20px; }
 .lock-tip { margin: 0; font-size: 13px; color: var(--ink-3); }
+.pay-box {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px dashed var(--cinnabar);
+  border-radius: 12px;
+  background: #fff8f6;
+  text-align: center;
+}
+.pay-qr {
+  display: block;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 10px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #fff;
+}
+.pay-title { margin: 0 0 6px; font-size: 15px; font-weight: 700; color: var(--cinnabar-deep); }
+.pay-code { margin: 0; font-size: 14px; color: var(--ink-2); }
+.pay-code b { font-size: 16px; letter-spacing: 1px; color: var(--cinnabar-deep); }
 
 /* 专业版 */
 .pro-head { margin-bottom: 16px; }

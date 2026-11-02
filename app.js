@@ -381,7 +381,7 @@
   var lastShare = '';
 
   // 解锁口令：改这里的数字即可。注意纯前端静态站，口令在源码里可见，防君子不防小人。
-  var UNLOCK_CODE = '5201314';
+  var UNLOCK_CODE = '82641937';
   var unlocked = false;
   try { unlocked = localStorage.getItem('yuanfen_unlocked') === '1'; } catch (e) {}
 
@@ -615,6 +615,7 @@
   }
 
   $('startBtn').addEventListener('click', start);
+  $('teaserUnlockBtn').addEventListener('click', function () { setVersion('pro'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
   $('againBtn').addEventListener('click', function () { show(inputView); });
   $('againBtn2').addEventListener('click', function () { show(inputView); });
   $('shareBtn').addEventListener('click', share);
@@ -633,6 +634,9 @@
     }
   });
   $('unlockInput').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('unlockBtn').click(); });
+
+  var codeShowEl = $('codeShow');
+  if (codeShowEl) codeShowEl.textContent = UNLOCK_CODE;
 
   initHours();
 })();
