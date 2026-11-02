@@ -637,6 +637,11 @@
 
   var codeShowEl = $('codeShow');
   if (codeShowEl) codeShowEl.textContent = UNLOCK_CODE;
+  var showBtn = $('showCodeBtn');
+  if (showBtn) showBtn.addEventListener('click', function () {
+    var w = $('codeWrap'); if (w) w.hidden = false;
+    showBtn.style.display = 'none';
+  });
 
   initHours();
 })();
